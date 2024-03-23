@@ -54,7 +54,7 @@ h3, h4, h5, h6, p {
 }
 
 .navbar-toggler-icon {
-   position: absolute;
+  position: absolute;
   background-image: url("menu_dark.png");
   height: 50px;
   width: 50px;
@@ -78,7 +78,14 @@ h3, h4, h5, h6, p {
     width: 100%;
 }
 
- a:link {
+.links-link {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #504c50;
+    font-size: 24px;
+}
+
+a:link {
       text-decoration: none;
       color: #504c50;
 }
