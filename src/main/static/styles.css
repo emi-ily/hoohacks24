@@ -68,3 +68,27 @@ h3, h4, h5, h6, p {
     width: 150px;
     top: 5px;
 }
+
+.link-column {
+    margin: 10px;
+    text-align: center;
+}
+
+#logo-link-header {
+    width: 100%;
+}
+
+ a:link {
+      text-decoration: none;
+      color: #504c50;
+}
+
+a:visited {
+      text-decoration: none;
+      color: #504c50;
+}
+
+a:hover {
+      text-decoration: none;
+      color: #635e63;
+}

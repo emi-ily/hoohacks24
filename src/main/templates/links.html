@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Terreform – Navigation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>link 1</h2>
-    <h2>link 2</h2>
+    <div class="link-column">
+        <img src="{{ url_for('static', filename='logo_greens.png') }}" alt="Terreform" id="logo-link-header">
+        <h2><a href="{{url_for('home')}}">HOME</a></h2>
+        <a href="{{url_for('home')}}"><h2>HOME AGAIN</h2></a>
+    </div>
+
 </body>
 </html>
