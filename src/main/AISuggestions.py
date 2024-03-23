@@ -1,3 +1,4 @@
+# NOTE FROM EMILY THIS DOES NTO WORK
 # using perplexity ai
 # might have to run this line of code: pip install git+https://github.com/nathanrchn/perplexityai.git
 # api: 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
