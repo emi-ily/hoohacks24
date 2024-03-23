@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<head>
-    <script type="module" src="src/index.js"></script>
-    <script type="module" src="createClient.js"></script>
-</head>
     <div class="container">
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Terreform!</h1>
@@ -75,5 +71,8 @@
         </div>
     </div>
 </div>
+
+<script type="module" src="{{ url_for('static', filename='index.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='createClient.js') }}"></script>
 
 {% endblock %}
