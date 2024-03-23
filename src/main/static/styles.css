@@ -68,3 +68,8 @@ h3, h4, h5, h6, p {
     width: 150px;
     top: 5px;
 }
+
+.custom-btn {
+    background-color: #ADC2A1; /* green color */
+    color: #ffffff; /* White text color */
+}
