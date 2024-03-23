@@ -1,5 +1,9 @@
 import pandas as pd
 
+# this basically reads in two csv and ends up with a dictionary of food: GHG emissions per serving
+# and then i use that dictionary in Calculations.Food.py
+
+
 # source: https://www.datacamp.com/tutorial/pandas-read-csv
 # also the data is GHG emissions per kg
 usecols = ["Entity", "GHG emissions per kilogram (Poore & Nemecek, 2018)"]
@@ -23,3 +27,12 @@ foods['Chicken'] = foods.pop('Poultry Meat')
 # serving_size = {'Meat': 160, ''}
 # classification = {'Meat': ['Beef', 'Pork', 'Chicken', 'Fish'], 'Dairy': ['Cheese', 'Milk']}
 
+df = pd.read_csv("servingtograms.csv")
+# print(df)
+# food = df.set_index('Food').to_dict()['Grams', 'GHG']
+food_dict = (df.set_index('Food')['KG'] * df.set_index('Food')['GHG']).to_dict()
+
+
+# Convert the DataFrame to a dictionary
+# food_dict = df.set_index('Food').T.to_dict('list')
+print(food_dict)
