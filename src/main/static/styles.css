@@ -92,3 +92,9 @@ a:hover {
       text-decoration: none;
       color: #635e63;
 }
+
+
+.custom-btn {
+    background-color: #ADC2A1; /* green color */
+    color: #ffffff; /* White text color */
+}
