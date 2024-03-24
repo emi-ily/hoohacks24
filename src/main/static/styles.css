@@ -105,3 +105,13 @@ a:hover {
     background-color: #ADC2A1; /* green color */
     color: #ffffff; /* White text color */
 }
+
+.user-icon {
+            float: right;
+            margin-left: 650px; /* Adjust as needed */
+        }
+
+.user-icon img {
+            width: 50px; /* Set the width to desired size */
+            height: 50px; /* Set the height to desired size */
+        }
