@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+
+{% block title %} My Carbon Footprint {% endblock %}
+
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
 {% block content %}
-<head>
-    <title>Carbon Emissions Result</title>
-</head>
 <h1>Total Carbon Emissions</h1>
     <p>{{ total_emissions }}</p>
 {% endblock %}

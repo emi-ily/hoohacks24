@@ -72,7 +72,7 @@ def links():
 
 @app.route("/random")
 def random():
-    return render_template("random.html")
+    return render_template("random.html", pfp=data.pic)
 
 
 @app.route("/login")
@@ -106,23 +106,23 @@ def search():
         return render_template("foodsearch.html", error="visible", item=product_name)
     product_info = get_product_info(product_name)
 
-    return render_template('result.html', product_info=product_info, product_name=product_name)
+    return render_template('result.html', product_info=product_info, product_name=product_name, pfp=data.pic)
 
 
 @app.route('/foodsearch')
 def food_find():
-    return render_template('foodsearch.html', error="hidden", item="")
+    return render_template('foodsearch.html', error="hidden", item="", pfp=data.pic)
 
 @app.route('/footprintcalculation')
 def footprint_find():
-    return render_template('footprint.html', error="hidden", item="")
+    return render_template('footprint.html', error="hidden", item="", pfp=data.pic)
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
     food = request.form['food']
     servings = float(request.form['servings'])
     emissions = calculate_emissions(food, servings)
-    return render_template('calculationresult.html', food=food, servings=servings, emissions=emissions)
+    return render_template('calculationresult.html', food=food, servings=servings, emissions=emissions, pfp=data.pic)
 
 
 if __name__ == "__main__":

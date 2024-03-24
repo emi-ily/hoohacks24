@@ -2,6 +2,10 @@
 
 {% block title %} Food Search {% endblock %}
 
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
 {% block content %}
 
 <h1>Search for a Product or Food</h1>
