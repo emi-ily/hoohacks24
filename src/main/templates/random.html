@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="display-when-logged-out">
+    <p>You are not logged in</p>
+    <button id="signup">Sign Up</button>
+    <button id="login">Login</button>
+</div>
+<div id="display-when-logged-in" style="display: none;">
+    <p>You are logged in <span id="email"></span></p>
+    <button id="account">Account</button>
+    <button id="logout">Logout</button>
+</div>
+
+    <form action="/loggedin" method="POST">
+            <div class="input">
+                <div class="input-group mb-3">
+                    <input type="text" name="email" class="form-control" placeholder="what is your email" aria-label="email" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                </div>
+            </div>
+        </form>
+
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>

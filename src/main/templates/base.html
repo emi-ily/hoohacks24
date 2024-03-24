@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Terreform – {% block title %} {% endblock %}</title>
+    <script crossorigin
+        src="https://www.unpkg.com/@propelauth/javascript@1.2.0/dist/javascript.min.js"
+        integrity="sha384-pMadYvjH0JNVI3hWTw5bcqu5qrOqBUXhcaTmBg4UjujHMuxd74zBO4ByZkZAQflR"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -18,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{url_for('random')}}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
@@ -37,7 +40,43 @@
         {% block content %} {% endblock %}
     </div>
 
+    <script>
+    import {createClient} from "@propelauth/javascript"
+    const client = PropelAuth.createClient({
+        authUrl: "https://59223397842.propelauthtest.com",
+        enableBackgroundTokenRefresh: true,
+    });
 
+    // Set up each element to go to a PropelAuth hosted page or logout
+    document.getElementById("signup").onclick = client.redirectToSignupPage;
+    document.getElementById("login").onclick = client.redirectToLoginPage;
+    document.getElementById("profile-picture").onclick = client.redirectToAccountPage;
+    document.getElementById("logout").onclick = client.logout;
+
+    // Update the page based on the auth information we fetch from PropelAuth
+    function updatePage() {
+        client.getAuthenticationInfoOrNull().then(authInfo => {
+            if (authInfo) {
+                document.getElementById("profile-picture").src = authInfo.user.pictureUrl;
+                document.getElementById("display-when-logged-in").style.display = "block";
+                document.getElementById("display-when-logged-out").style.display = "none";
+            } else {
+                document.getElementById("display-when-logged-in").style.display = "none";
+                document.getElementById("display-when-logged-out").style.display = "block";
+            }
+        })
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const myButton = document.getElementById('signup');
+    myButton.addEventListener('click', function() {
+        updatePage();
+    });
+});
+
+    // Whenever our user logs in or out, update the page
+    client.addLoggedInChangeObserver(updatePage);
+</script>
 
 </body>
 </html>

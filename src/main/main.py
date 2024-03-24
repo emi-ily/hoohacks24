@@ -28,21 +28,35 @@ bwIDAQAB
 )
 
 
+@app.route("/loggedin", methods=['GET','POST'])
+def get_user():
+    email = request.form["email"]
+    user = auth.fetch_user_metadata_by_email(
+        email,
+        include_orgs=False,
+    )
+    return render_template("index.html", user=user.get("user_id"))
+
 @app.route("/api/whoami")
-@auth.require_user
-def who_am_i():
-    """This route is protected, current_user is always set"""
-    return {"user_id": current_user.user_id}
+@auth.optional_user
+def who_am_i_optional():
+    if current_user.exists():
+        return {"user_id": current_user.user_id}
+    return {}
 
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", user="idk this user...")
 
 
 @app.route("/navigation")
 def links():
     return render_template("links.html")
+
+@app.route("/random")
+def random():
+    return render_template("random.html")
 
 
 if __name__ == "__main__":
