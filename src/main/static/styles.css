@@ -308,3 +308,12 @@ button[type=submit]:hover {
     height: 200px;
     width: 355px;
 }
+
+.container-side2 {
+    width: 50%;
+    max-width: 500px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 10px;
+    grid-column: 1;
+}
