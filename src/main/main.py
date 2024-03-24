@@ -94,6 +94,7 @@ def account():
     return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name,
                            error="hidden")
 
+
 @app.route('/search', methods=['POST'])
 def search():
     product_name = request.form['product_name']

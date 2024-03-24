@@ -4,7 +4,9 @@
 
 {% block content %}
 
-<h1>Product Info: {{ product_name }}</h1>
+<div class="two-col">
+    <div class="container-bg container-side">
+        <h1>Product Info: {{ product_name }}</h1>
     <p>Eco-score: {{ product_info.ecoscore }}</p>
     <p>Nutri-score: {{ product_info.nutriscore }}</p>
     <p>Proteins: {{ product_info.proteins }} g</p>
@@ -12,4 +14,13 @@
     <p>Sugars: {{ product_info.sugars }} g</p>
     <p>Fat: {{ product_info.fat }} g</p>
     <p>Carbon Footprint From Known Ingredients: {{ product_info.carbon_footprint }} (per 100g)</p>
+    </div>
+
+    <div class="container-bg container-side">
+        hi
+    </div>
+
+</div>
+
+
 {% endblock %}
