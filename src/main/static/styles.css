@@ -310,3 +310,27 @@ button[type=submit]:hover {
 #eco-score{
     width: 460px;
 }
+
+#foot-stump{
+    height: 200px;
+    width: 355px;
+}
+
+#fruits{
+    height: 200px;
+    width: 355px;
+}
+
+#hacker{
+    height: 200px;
+    width: 355px;
+}
+
+.container-side2 {
+    width: 50%;
+    max-width: 500px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 10px;
+    grid-column: 1;
+}
