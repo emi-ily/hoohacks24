@@ -117,6 +117,11 @@ def food_find():
 def footprint_find():
     return render_template('footprint.html', error="hidden", item="")
 
+@app.route('/aboutme')
+def about_me():
+    return render_template('aboutme.html', error="hidden", item="")
+
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     food = request.form['food']
