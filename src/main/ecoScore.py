@@ -46,7 +46,8 @@ def get_product_info(product_name):
         "carbohydrates": carbohydrates,
         "sugars": sugars,
         "fat": fat,
-        "carbon_footprint": carbon_footprint
+        "carbon_footprint": carbon_footprint,
+        "data": data
     }
 
 

@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+
+{% block title %} About {% endblock %}
+
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
 {% block content %}
     <div class="container-bg container-side2">
         <h1>About The Creators</h1>

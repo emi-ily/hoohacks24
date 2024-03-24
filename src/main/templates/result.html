@@ -2,6 +2,10 @@
 
 {% block title %} {{ product_name }} score {% endblock %}
 
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
 {% block content %}
 
 <div class="two-col">
@@ -17,7 +21,13 @@
         <a href="{{url_for('food_find')}}">
             <button type="button" class="custom-btn">Search Again</button>
         </a>
+
+        <a rel="canonical" href="https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms={{ product_name }}&sort_by=unique_scans_n&page_size=20">
+            <button type="button" class="custom-btn">More Results</button>
+        </a>
     </div>
+
+
 
     <div class="container-bg container-side">
         <h1>What is Nutri-Score?</h1>
