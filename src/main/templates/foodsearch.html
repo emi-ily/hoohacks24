@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <title>Product Info</title>
+</head>
+<h1>Search for a Product</h1>
+    <form action="/search" method="post">
+        <label>
+            <input type="text" name="product_name" placeholder="Enter product name">
+        </label>
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

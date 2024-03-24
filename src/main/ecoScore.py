@@ -1,7 +1,9 @@
+from flask import Flask, render_template, request
 import openfoodfacts
 import json
 import re
 
+app = Flask(__name__)
 
 def get_product_info(product_name):
     api = openfoodfacts.API(user_agent="OPenFoodInfo/1.0")
@@ -22,13 +24,28 @@ def get_product_info(product_name):
 
     nutriments = str(product.get('nutriments'))
 
-    print("Proteins:", product.get('nutriments').get('proteins'), "g")
-    print("Carbohydrates:", product.get('nutriments').get('carbohydrates'), "g")
-    print("Sugar:", product.get('nutriments').get('sugars'), "g")
-    print("Fat:", product.get('nutriments').get('fat'), "g")
-    print("Carbon Footprint From Known Ingredients:", product.get('nutriments').get('carbon-footprint-from-known-ingredients_100g'), "(per 100g)")
+    #print("Proteins:", product.get('nutriments').get('proteins'), "g")
+    #print("Carbohydrates:", product.get('nutriments').get('carbohydrates'), "g")
+    #print("Sugar:", product.get('nutriments').get('sugars'), "g")
+    #print("Fat:", product.get('nutriments').get('fat'), "g")
+    #print("Carbon Footprint From Known Ingredients:", product.get('nutriments').get('carbon-footprint-from-known-ingredients_100g'), "(per 100g)")
+
+    proteins = product.get('nutriments').get('proteins')
+    carbohydrates = product.get('nutriments').get('carbohydrates')
+    sugars = product.get('nutriments').get('sugars')
+    fat = product.get('nutriments').get('fat')
+    carbon_footprint = product.get('nutriments').get('carbon-footprint-from-known-ingredients_100g')
+
+    return {
+        "ecoscore": ecoscore,
+        "nutriscore": nutriscore,
+        "proteins": proteins,
+        "carbohydrates": carbohydrates,
+        "sugars": sugars,
+        "fat": fat,
+        "carbon_footprint": carbon_footprint
+    }
 
 
-
-Product = input("Which product are you looking for?\n")
-get_product_info(Product)
+#Product = input("Which product are you looking for?\n")
+#get_product_info(Product)
