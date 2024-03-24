@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
-from src.main.calculate import calculate_emissions
-from src.main.ecoScore import get_product_info, search_product
+from calculate import calculate_emissions
+from ecoScore import get_product_info, search_product
 
 app = Flask(__name__)
 
