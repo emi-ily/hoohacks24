@@ -1,10 +1,81 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Home {% endblock %}</h1>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
-    <h3>{{ utc_dt }}</h3>
-<!--    <TextField fx:id="beefservings" promptText="On average, how many servings of beef do you consume weekly?"></TextField>-->
+    <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Terreform!</h1>
+        <p class="lead">Explore a greener tomorrow with us.</p>
+        <hr class="my-4">
+        <p>Join us in our mission to create a sustainable future for all.</p>
+        <div class="text-center"> <!-- Center the button -->
+        <div id="display-when-logged-out">
+                <p>{{ user }}</p>
+            <a href=""><button id="signup" class="btn btn-lg custom-btn">Sign Up</button></a>
+            <a href="https://59223397842.propelauthtest.com/en/login"><button id="login" class="btn btn-lg custom-btn">Login</button></a>
+
+            </div>
+            <div id="display-when-logged-in" style="display: none;">
+                <p>You are logged in <span id="email"></span></p>
+                <button id="account" class="btn btn-lg custom-btn">Account</button>
+                <button id="logout" class="btn btn-lg custom-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+        <!-- Add space between the button and the cards -->
+    <div class="mb-4"></div>
+
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">Carbon Footprint</h5>
+                    <p class="card-text">Check out the status of your carbon footprint here!</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="footprint.html">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">See Status</button>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">TEST</h5>
+                    <p class="card-text">blah blah blah blah</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">TEST</h5>
+                    <p class="card-text">blah blah blah blah</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock %}
+
