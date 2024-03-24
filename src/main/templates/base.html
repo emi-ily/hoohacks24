@@ -26,11 +26,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('random')}}">Random</a>
           </li>
-            </li>
-            <li class="nav-item user-icon">
-            <a href="{{url_for('account')}}"><img src="{{ url_for('static', filename='user_dark.png') }}" /></a>
-          </li>
+
         </ul>
+          <a class="user-icon" href="{{url_for('account')}}"><img src="{{ url_for('static', filename='user_dark.png') }}" /></a>
       </div>
     </nav>
     <hr>

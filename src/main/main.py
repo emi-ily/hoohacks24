@@ -4,6 +4,13 @@ from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
 app = Flask(__name__)
 
+
+class DataStore():
+    user = None
+
+
+data = DataStore()
+
 # You can find your Verifier Key under Backend Integration in the dashboard.
 #   This skips a network request to fetch the key on startup.
 auth = init_auth(
@@ -46,12 +53,7 @@ def who_am_i_optional():
 
 @app.route("/")
 def home():
-    me = who_am_i_optional()
-    if len(me) > 0:
-        username = me.get("user_id")
-    else:
-        username = "You are not signed in!"
-    return render_template("index.html", user=username)
+    return render_template("index.html")
 
 
 @app.route("/navigation")
@@ -63,9 +65,21 @@ def links():
 def random():
     return render_template("random.html")
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
 @app.route("/account")
 def account():
-    return render_template("account.html")
+    user = request.args.get('user', None)
+    if user is None:
+        no_user_vis = "visible"
+        yes_user_vis = "hidden"
+    else:
+        data.user = user
+        no_user_vis = "hidden"
+        yes_user_vis = "visible"
+    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=user)
 
 
 if __name__ == "__main__":
