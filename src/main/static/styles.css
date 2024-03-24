@@ -12,6 +12,10 @@ body {
     position: relative;
 }
 
+.lead{
+    text-align: center;
+}
+
 h1, h2 {
     font-family: "Urbanist",sans-serif;
     font-weight: bolder;
@@ -274,4 +278,17 @@ button[type=submit]:hover {
 .two-col {
     display: grid;
     grid-template-columns: 50%, 50%;
+}
+
+#nutri-score {
+    height: 100px;
+    width: 300px;
+}
+
+#nutri-score-container {
+    text-align: center;
+}
+
+#eco-score{
+    width: 460px;
 }
