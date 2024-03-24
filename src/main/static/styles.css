@@ -187,4 +187,76 @@ h3, h4, h5, h6, p {
 
 .input {
     place-items: center;
+    text-align: center;
+}
+
+.input-group {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+.sign-up {
+    text-align: center;
+    color: #7D8D73;
+    text-decoration: none;
+    font-family: "Urbanist",sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.sign-up:hover {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+.sign-up:visited {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+input[type=text] {
+    padding:5px;
+    border:2px solid #ECE9E1;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#ADC2A1;
+}
+
+button[type=submit] {
+    padding:5px 15px;
+    background:#ADC2A1;
+    border:0 none;
+    border-color:#7D8D73;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-color:#504C50;
+}
+
+button[type=submit]:hover {
+    background:#504C50;
+    border-color:#ECE9E1;
+    text-color: #FAF8F6;
+}
+
+.container-bg {
+    background: #D9D5C8;
+}
+
+.container-wide {
+    width: 75%;
+    max-width: 750px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.big-column {
+    justify-content: center;
+    align-items: center;
 }
