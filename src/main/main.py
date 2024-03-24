@@ -98,9 +98,10 @@ def account():
 @app.route('/search', methods=['POST'])
 def search():
     product_name = request.form['product_name']
+    if product_name == "":
+        return render_template("foodsearch.html", error="visible", item="[no name]")
     product_count = search_product(product_name)
-
-    if product_name == "" or product_count == 0:
+    if product_count == 0:
         return render_template("foodsearch.html", error="visible", item=product_name)
     product_info = get_product_info(product_name)
 
