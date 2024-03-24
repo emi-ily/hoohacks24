@@ -17,10 +17,35 @@
     </div>
 
     <div class="container-bg container-side">
-        hi
+        <h1>What is Nutri-Score?</h1>
+        <div id="nutri-score-container">
+         <img src="{{ url_for('static', filename='nutri_score.png') }}" id="nutri-score" alt="nutritional score">
+            </div>
+        <p>The Nutri-Score is a logo that shows the nutritional quality of food products with A to E grades. With the NutriScore, products can be easily and quickly compared.</p>
+
+         <h2>How is Nutri-Score Computed?</h2>
+        <p>The Nutri-Score is calculated from data in the nutritional declaration table which appears on the back of the packaging and composition data (fiber, fruits and vegetables, dried vegetables). It is determined by the amount of healthy and unhealthy nutrients:</p>
+        <p><b>Negative points:</b> energy, saturated fat, sugars, sodium (high levels are considered unhealthy)</p>
+        <p><b>Positive points: </b>the proportion of fruits, vegetables and nuts, of olive, colza and nut oils, of fibers and proteins.</p>
+
+        <h1>What is the Eco-Score?</h1>
+                 <img src="{{ url_for('static', filename='eco_score.png') }}" id="eco-score" alt="eco score">
+        <p>The Eco-Score is designed on a model similar to the Nutri-Score: it is a grade from A to E which summarizes 15 environmental impacts. The Eco-Score score is materialized by a colored leaf-shaped logo with a letter from A (very low impact) to E (very high impact).</p>
+
+        <h2>How is the Eco-Score calculated?</h2>
+        <p>For each product category, a benchmark score is established using data from the Agribalyse environmental database designed by ADEME and INRAE. These data correspond to the life cycle analysis (LCA) of the products.</p>
+
+        <h3>Life cycle assessment (LCA)</h3>
+        <p>Life cycle analysis is a standardized assessment method for carrying out a multi-stage environmental assessment and multi-criteria:</p>
+        <ul>
+            <li>6 production steps: agriculture, processing, packaging, transportation, distribution, and consumption</li>
+            <li>14 environmental impact indicators: climate change/carbon footprint, ozone layer depletion, ionizing radiation, land, water, and energy use; pollution of air and marine and fresh water (particles, acidification, eutrophication); and depletion of resources</li>
+        </ul>
+
     </div>
 
 </div>
+
 
 
 {% endblock %}

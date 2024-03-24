@@ -275,3 +275,16 @@ button[type=submit]:hover {
     display: grid;
     grid-template-columns: 50%, 50%;
 }
+
+#nutri-score {
+    height: 100px;
+    width: 300px;
+}
+
+#nutri-score-container {
+    text-align: center;
+}
+
+#eco-score{
+    width: 460px;
+}
