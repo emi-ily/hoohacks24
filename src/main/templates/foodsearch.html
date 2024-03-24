@@ -5,6 +5,7 @@
 {% block content %}
 
 <h1>Search for a Product or Food</h1>
+<div class="lead">
     <div class="error-msg" style="visibility:{{ error }};">
         Oh no! We couldn't find a food item called "{{ item }}"
     </div>
@@ -14,5 +15,6 @@
         </label>
         <button type="submit">Search</button>
     </form>
+    </div>
 
 {% endblock %}

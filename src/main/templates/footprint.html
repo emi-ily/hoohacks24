@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1 class="display-4">Food Emissions Calculator</h1>
+<div class="lead">
 <form action="/calculate" method="post">
         <label for="food">Select Food:</label>
         <select name="food" id="food">
@@ -18,4 +19,5 @@
         <input type="number" name="servings" id="servings" min="1" step="1">
         <button type="submit">Calculate</button>
     </form>
+    </div>
 {% endblock %}
