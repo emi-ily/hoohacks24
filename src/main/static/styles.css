@@ -72,6 +72,7 @@ h3, h4, h5, h6, p {
 .link-column {
     margin: 10px;
     text-align: center;
+    place-items: center;
 }
 
 #logo-link-header {
@@ -85,19 +86,73 @@ h3, h4, h5, h6, p {
     font-size: 24px;
 }
 
-a:link {
+.links-link:link {
       text-decoration: none;
       color: #504c50;
 }
 
-a:visited {
+.links-link:visited {
       text-decoration: none;
       color: #504c50;
 }
 
-a:hover {
+.links-link:hover {
       text-decoration: none;
       color: #635e63;
+}
+
+.user-link {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #7D8D73;
+    font-size: 48px;
+    line-height: 2;
+    text-decoration: none;
+}
+
+.account-display {
+    position: absolute;
+    color: #7D8D73;
+    right: 15px;
+    top: 15px;
+    text-decoration: none;
+    font-family: "Urbanist",sans-serif;
+}
+
+.account {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.user-name {
+    color: #7D8D73;
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #7D8D73;
+    font-size: 48px;
+    line-height: 2;
+    text-decoration: none;
+}
+
+.account-display:hover {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+.user-link:link {
+      text-decoration: none;
+      color: #7D8D73;
+}
+
+.user-link:visited {
+      text-decoration: none;
+      color: #7D8D73;
+}
+
+.user-link:hover {
+      text-decoration: none;
+      color: #ADC2A1;
 }
 
 
@@ -106,12 +161,30 @@ a:hover {
     color: #ffffff; /* White text color */
 }
 
-.user-icon {
-            float: right;
-            margin-left: 650px; /* Adjust as needed */
-        }
-
 .user-icon img {
-            width: 50px; /* Set the width to desired size */
-            height: 50px; /* Set the height to desired size */
-        }
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.not-logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.error-msg {
+    color: #b04148;
+}
+
+.input {
+    place-items: center;
+}

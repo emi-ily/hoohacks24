@@ -2,9 +2,15 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
-
 app = Flask(__name__)
 
+
+class DataStore():
+    user = None
+    pic = "/static/user_dark.png"
+
+
+data = DataStore()
 
 # You can find your Verifier Key under Backend Integration in the dashboard.
 #   This skips a network request to fetch the key on startup.
@@ -28,14 +34,20 @@ bwIDAQAB
 )
 
 
-@app.route("/loggedin", methods=['GET','POST'])
+@app.route("/loggedin", methods=['GET', 'POST'])
 def get_user():
     email = request.form["email"]
     user = auth.fetch_user_metadata_by_email(
         email,
         include_orgs=False,
     )
-    return render_template("index.html", user=user.get("user_id"))
+    if user is not None:
+        data.user = user
+        data.pic = user.get("picture_url")
+        return render_template("index.html", pfp=data.pic)
+    else:
+        return render_template("login.html", error="visible")
+
 
 @app.route("/api/whoami")
 @auth.optional_user
@@ -47,16 +59,38 @@ def who_am_i_optional():
 
 @app.route("/")
 def home():
-    return render_template("index.html", user="idk this user...")
+    return render_template("index.html", pfp=data.pic)
 
 
 @app.route("/navigation")
 def links():
     return render_template("links.html")
 
+
 @app.route("/random")
 def random():
     return render_template("random.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html", error="hidden")
+
+
+@app.route("/account")
+def account():
+    if data.user is None:
+        no_user_vis = "visible"
+        yes_user_vis = "hidden"
+        username = " "
+        my_name = None
+    else:
+        username = data.user.get("username")
+        my_name = data.user.get("first_name")
+        no_user_vis = "hidden"
+        yes_user_vis = "visible"
+    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name,
+                           error="hidden")
 
 
 if __name__ == "__main__":

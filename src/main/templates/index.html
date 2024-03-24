@@ -1,25 +1,19 @@
 {% extends 'base.html' %}
 
+{% block title %} Home {% endblock %}
+
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
 {% block content %}
     <div class="container">
+        This is bad: {{ url_for('static', filename='user_dark.png') }}
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Terreform!</h1>
         <p class="lead">Explore a greener tomorrow with us.</p>
         <hr class="my-4">
-        <p>Join us in our mission to create a sustainable future for all.</p>
-        <div class="text-center"> <!-- Center the button -->
-        <div id="display-when-logged-out">
-                <p>{{ user }}</p>
-            <a href=""><button id="signup" class="btn btn-lg custom-btn">Sign Up</button></a>
-            <a href="https://59223397842.propelauthtest.com/en/login"><button id="login" class="btn btn-lg custom-btn">Login</button></a>
 
-            </div>
-            <div id="display-when-logged-in" style="display: none;">
-                <p>You are logged in <span id="email"></span></p>
-                <button id="account" class="btn btn-lg custom-btn">Account</button>
-                <button id="logout" class="btn btn-lg custom-btn">Logout</button>
-            </div>
-        </div>
     </div>
 
         <!-- Add space between the button and the cards -->

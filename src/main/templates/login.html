@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Account {% endblock %}
+
+{% block content %}
+<form action="/loggedin" method="POST">
+    <div class="input">
+        <div class="input-group mb-3">
+            <input type="text" name="email" class="form-control" placeholder="enter your email" aria-label="email" aria-describedby="button-addon2">
+            <br>
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">log in</button>
+        </div>
+
+    </div>
+</form>
+<div class="error-msg" style="visibility:{{ error }};">
+    We couldn't find an account associated with that email address.
+    <br>
+    <a class="user-link" href="https://59223397842.propelauthtest.com/account">Don't have an account? Sign Up!</a>
+</div>
+{{ link }}
+{% endblock %}
