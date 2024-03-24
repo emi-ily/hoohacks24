@@ -75,15 +75,15 @@ def login():
 
 @app.route("/account")
 def account():
-    user = request.args.get('user', None)
-    if user is None:
+    if data.user is None:
         no_user_vis = "visible"
         yes_user_vis = "hidden"
+        username = None
     else:
-        data.user = user
+        username = data.user.get("username")
         no_user_vis = "hidden"
         yes_user_vis = "visible"
-    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=user)
+    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username)
 
 
 if __name__ == "__main__":

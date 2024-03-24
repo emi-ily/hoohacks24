@@ -72,6 +72,7 @@ h3, h4, h5, h6, p {
 .link-column {
     margin: 10px;
     text-align: center;
+    place-items: center;
 }
 
 #logo-link-header {
@@ -135,4 +136,16 @@ h3, h4, h5, h6, p {
     top: 10px;
     width: 45px;
     height: 45px;
+}
+
+.not-logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
 }
