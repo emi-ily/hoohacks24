@@ -9,4 +9,3 @@ d = {'Cheese': 2.388, 'Coffee': 0.05706000000000001, 'Eggs': 0.467, 'Milk': 0.78
 def calculate_emissions(food, servings):
     return d[food] * servings
 
-beefservings
