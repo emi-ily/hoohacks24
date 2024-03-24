@@ -119,7 +119,7 @@ def footprint_find():
 
 @app.route('/aboutme')
 def about_me():
-    return render_template('aboutme.html', error="hidden", item="")
+    return render_template('aboutme.html', error="hidden", item="", pfp=data.pic)
 
 
 @app.route('/calculate', methods=['POST'])
