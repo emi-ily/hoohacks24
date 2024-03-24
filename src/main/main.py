@@ -2,9 +2,7 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
-
 app = Flask(__name__)
-
 
 # You can find your Verifier Key under Backend Integration in the dashboard.
 #   This skips a network request to fetch the key on startup.
@@ -28,7 +26,7 @@ bwIDAQAB
 )
 
 
-@app.route("/loggedin", methods=['GET','POST'])
+@app.route("/loggedin", methods=['GET', 'POST'])
 def get_user():
     email = request.form["email"]
     user = auth.fetch_user_metadata_by_email(
@@ -36,6 +34,7 @@ def get_user():
         include_orgs=False,
     )
     return render_template("index.html", user=user.get("user_id"))
+
 
 @app.route("/api/whoami")
 @auth.optional_user
@@ -47,16 +46,26 @@ def who_am_i_optional():
 
 @app.route("/")
 def home():
-    return render_template("index.html", user="idk this user...")
+    me = who_am_i_optional()
+    if len(me) > 0:
+        username = me.get("user_id")
+    else:
+        username = "You are not signed in!"
+    return render_template("index.html", user=username)
 
 
 @app.route("/navigation")
 def links():
     return render_template("links.html")
 
+
 @app.route("/random")
 def random():
     return render_template("random.html")
+
+@app.route("/account")
+def account():
+    return render_template("account.html")
 
 
 if __name__ == "__main__":
