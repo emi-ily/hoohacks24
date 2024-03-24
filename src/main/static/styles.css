@@ -111,6 +111,22 @@ h3, h4, h5, h6, p {
 }
 
 .account-display {
+    position: absolute;
+    color: #7D8D73;
+    right: 15px;
+    top: 15px;
+    text-decoration: none;
+    font-family: "Urbanist",sans-serif;
+}
+
+.account {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.user-name {
+    color: #7D8D73;
     font-family: "Urbanist",sans-serif;
     font-weight: bolder;
     color: #7D8D73;
@@ -119,17 +135,9 @@ h3, h4, h5, h6, p {
     text-decoration: none;
 }
 
-.sm-text {
-    font-size: 32px;
-}
-
-.user-name {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    text-decoration: none;
-    font-face: bold;
+.account-display:hover {
     color: #7D8D73;
+    text-decoration: none;
 }
 
 .user-link:link {
@@ -171,4 +179,8 @@ h3, h4, h5, h6, p {
     position: absolute;
     width: 100%;
     text-align: center;
+}
+
+.error-msg {
+    color: #b04148;
 }

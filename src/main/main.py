@@ -44,7 +44,9 @@ def get_user():
     if user is not None:
         data.user = user
         data.pic = user.get("picture_url")
-    return render_template("index.html", pfp=data.pic)
+        return render_template("index.html", pfp=data.pic)
+    else:
+        return render_template("login.html", error="visible")
 
 
 @app.route("/api/whoami")
@@ -69,9 +71,11 @@ def links():
 def random():
     return render_template("random.html")
 
+
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("login.html", error="hidden")
+
 
 @app.route("/account")
 def account():
@@ -85,7 +89,8 @@ def account():
         my_name = data.user.get("first_name")
         no_user_vis = "hidden"
         yes_user_vis = "visible"
-    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name)
+    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name,
+                           error="hidden")
 
 
 if __name__ == "__main__":
