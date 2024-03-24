@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 class DataStore():
     user = None
+    pic = "/static/user_dark.png"
 
 
 data = DataStore()
@@ -40,7 +41,10 @@ def get_user():
         email,
         include_orgs=False,
     )
-    return render_template("index.html", user=user.get("user_id"))
+    if user is not None:
+        data.user = user
+        data.pic = user.get("picture_url")
+    return render_template("index.html", pfp=data.pic)
 
 
 @app.route("/api/whoami")
@@ -53,7 +57,7 @@ def who_am_i_optional():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", pfp=data.pic)
 
 
 @app.route("/navigation")

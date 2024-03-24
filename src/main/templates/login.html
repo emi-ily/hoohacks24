@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %} Account {% endblock %}
+
+{% block content %}
+<form action="/loggedin" method="POST">
+    <div class="input">
+        <div class="input-group mb-3">
+            <input type="text" name="email" class="form-control" placeholder="email or username" aria-label="email" aria-describedby="button-addon2">
+            <input type="text" name="password" class="form-control" placeholder="password" aria-label="email" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">log in</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

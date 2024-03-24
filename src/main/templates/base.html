@@ -28,7 +28,7 @@
           </li>
 
         </ul>
-          <a class="user-icon" href="{{url_for('account')}}"><img src="{{ url_for('static', filename='user_dark.png') }}" /></a>
+          {% block user %} {% endblock %}
       </div>
     </nav>
     <hr>
