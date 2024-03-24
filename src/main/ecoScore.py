@@ -3,6 +3,10 @@ import openfoodfacts
 import json
 import re
 
+def search_product(product_name):
+    api = openfoodfacts.API(user_agent="OPenFoodInfo/1.0")
+    data = api.product.text_search(product_name)
+    return int(data["count"])
 
 def get_product_info(product_name):
     api = openfoodfacts.API(user_agent="OPenFoodInfo/1.0")

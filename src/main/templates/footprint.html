@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="display-4">Food Emissions Calculator</h1>
+<form action="/calculate" method="post">
+        <label for="food">Select Food:</label>
+        <select name="food" id="food">
+            <option value="Cheese">Cheese</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Eggs">Eggs</option>
+            <option value="Milk">Milk</option>
+            <option value="Beef">Beef</option>
+            <option value="Fish">Fish</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Pork">Pork</option>
+            <option value="Chicken">Chicken</option>
+        </select>
+        <label for="servings">Servings:</label>
+        <input type="number" name="servings" id="servings" min="1" step="1">
+        <button type="submit">Calculate</button>
+    </form>
+{% endblock %}

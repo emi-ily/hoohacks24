@@ -12,6 +12,10 @@ body {
     position: relative;
 }
 
+.lead{
+    text-align: center;
+}
+
 h1, h2 {
     font-family: "Urbanist",sans-serif;
     font-weight: bolder;
@@ -159,7 +163,8 @@ h3, h4, h5, h6, p {
 
 .custom-btn {
     background-color: #ADC2A1; /* green color */
-    color: #ffffff; /* White text color */
+    color: #504c50; /* text color */
+    text-align: center;
 }
 
 .user-icon img {

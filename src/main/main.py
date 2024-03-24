@@ -2,7 +2,8 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
-from src.main.ecoScore import get_product_info
+from src.main.calculate import calculate_emissions
+from src.main.ecoScore import get_product_info, search_product
 
 app = Flask(__name__)
 
@@ -98,13 +99,30 @@ def account():
 @app.route('/search', methods=['POST'])
 def search():
     product_name = request.form['product_name']
+    if product_name == "":
+        return render_template("foodsearch.html", error="visible", item="[no name]")
+    product_count = search_product(product_name)
+    if product_count == 0:
+        return render_template("foodsearch.html", error="visible", item=product_name)
     product_info = get_product_info(product_name)
+
     return render_template('result.html', product_info=product_info, product_name=product_name)
 
 
 @app.route('/foodsearch')
 def food_find():
-    return render_template('foodsearch.html')
+    return render_template('foodsearch.html', error="hidden", item="")
+
+@app.route('/footprintcalculation')
+def footprint_find():
+    return render_template('footprint.html', error="hidden", item="")
+
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    food = request.form['food']
+    servings = float(request.form['servings'])
+    emissions = calculate_emissions(food, servings)
+    return render_template('calculationresult.html', food=food, servings=servings, emissions=emissions)
 
 
 if __name__ == "__main__":

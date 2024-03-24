@@ -14,6 +14,9 @@
     <p>Sugars: {{ product_info.sugars }}g</p>
     <p>Fat: {{ product_info.fat }}g</p>
     <p>Carbon Footprint From Known Ingredients: {{ product_info.carbon_footprint }} (per 100g)</p>
+        <a href="{{url_for('food_find')}}">
+            <button type="button" class="custom-btn">Search Again</button>
+        </a>
     </div>
 
     <div class="container-bg container-side">
