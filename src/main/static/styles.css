@@ -249,9 +249,10 @@ button[type=submit]:hover {
 }
 
 .container-wide {
-    width: 50%;
-    max-width: 500px;
-    margin: 25%;
+    width: 75%;
+    max-width: 750px;
+    padding: 25px;
+    margin: auto;
     margin-top: 50px;
 }
 
