@@ -1,0 +1,290 @@
+html {
+  font-family: sans-serif;
+  background: #faf8f6;
+}
+
+body {
+    background: #faf8f6;
+}
+
+.content{
+    padding-top: 55px;
+    position: relative;
+}
+
+h1, h2 {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #504c50;
+    margin: 1rem 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+h3, h4, h5, h6, p {
+  font-family: "Inter",sans-serif;
+  color: #504c50;
+  margin: 1rem 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.navbar{
+    padding-left: 10px;
+    height:50px;
+    background: #faf8f6;
+}
+
+.navbar-nav{
+    padding-left: 180px;
+}
+
+.nav-link{
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #504c50;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar-collapse{
+    height: 30px;
+    padding-top: 18px;
+    background: #faf8f6;
+}
+
+.navbar-toggler-icon {
+  position: absolute;
+  background-image: url("menu_dark.png");
+  height: 50px;
+  width: 50px;
+  top: 6px;
+  right: 10px;
+}
+
+#logo-header {
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    top: 5px;
+}
+
+.link-column {
+    margin: 10px;
+    text-align: center;
+    place-items: center;
+}
+
+#logo-link-header {
+    width: 100%;
+}
+
+.links-link {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #504c50;
+    font-size: 24px;
+}
+
+.links-link:link {
+      text-decoration: none;
+      color: #504c50;
+}
+
+.links-link:visited {
+      text-decoration: none;
+      color: #504c50;
+}
+
+.links-link:hover {
+      text-decoration: none;
+      color: #635e63;
+}
+
+.user-link {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #7D8D73;
+    font-size: 48px;
+    line-height: 2;
+    text-decoration: none;
+}
+
+.account-display {
+    position: absolute;
+    color: #7D8D73;
+    right: 15px;
+    top: 15px;
+    text-decoration: none;
+    font-family: "Urbanist",sans-serif;
+}
+
+.account {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.user-name {
+    color: #7D8D73;
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #7D8D73;
+    font-size: 48px;
+    line-height: 2;
+    text-decoration: none;
+}
+
+.account-display:hover {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+.user-link:link {
+      text-decoration: none;
+      color: #7D8D73;
+}
+
+.user-link:visited {
+      text-decoration: none;
+      color: #7D8D73;
+}
+
+.user-link:hover {
+      text-decoration: none;
+      color: #ADC2A1;
+}
+
+
+.custom-btn {
+    background-color: #ADC2A1; /* green color */
+    color: #ffffff; /* White text color */
+}
+
+.user-icon img {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.not-logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.logged-in {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.error-msg {
+    color: #b04148;
+}
+
+.input {
+    place-items: center;
+    text-align: center;
+}
+
+.input-group {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+.sign-up {
+    text-align: center;
+    color: #7D8D73;
+    text-decoration: none;
+    font-family: "Urbanist",sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.sign-up:hover {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+.sign-up:visited {
+    color: #7D8D73;
+    text-decoration: none;
+}
+
+input[type=text] {
+    padding:5px;
+    border:2px solid #ECE9E1;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#ADC2A1;
+}
+
+button[type=submit] {
+    padding:5px 15px;
+    background:#ADC2A1;
+    border:0 none;
+    border-color:#7D8D73;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-color:#504C50;
+}
+
+button[type=submit]:hover {
+    background:#504C50;
+    border-color:#ECE9E1;
+    text-color: #FAF8F6;
+}
+
+.container-bg {
+    background: #D9D5C8;
+}
+
+.container-wide {
+    width: 75%;
+    max-width: 750px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.container-side {
+    width: 50%;
+    max-width: 500px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 50px;
+    grid-column: 1;
+}
+
+.big-column {
+    justify-content: center;
+    align-items: center;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 50%, 50%;
+}
+
+#nutri-score {
+    height: 100px;
+    width: 300px;
+}
+
+#nutri-score-container {
+    text-align: center;
+}
+
+#eco-score{
+    width: 460px;
+}

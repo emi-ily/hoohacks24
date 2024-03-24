@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ product_name }} score {% endblock %}
+
+{% block content %}
+
+<div class="two-col">
+    <div class="container-bg container-side">
+        <h1>Product Info: {{ product_name }}</h1>
+    <p>Eco-score: {{ product_info.ecoscore }}</p>
+    <p>Nutri-score: {{ product_info.nutriscore }}</p>
+    <p>Proteins: {{ product_info.proteins }}g</p>
+    <p>Carbohydrates: {{ product_info.carbohydrates }}g</p>
+    <p>Sugars: {{ product_info.sugars }}g</p>
+    <p>Fat: {{ product_info.fat }}g</p>
+    <p>Carbon Footprint From Known Ingredients: {{ product_info.carbon_footprint }} (per 100g)</p>
+    </div>
+
+    <div class="container-bg container-side">
+        <h1>What is Nutri-Score?</h1>
+        <div id="nutri-score-container">
+         <img src="{{ url_for('static', filename='nutri_score.png') }}" id="nutri-score" alt="nutritional score">
+            </div>
+        <p>The Nutri-Score is a logo that shows the nutritional quality of food products with A to E grades. With the NutriScore, products can be easily and quickly compared.</p>
+
+         <h2>How is Nutri-Score Computed?</h2>
+        <p>The Nutri-Score is calculated from data in the nutritional declaration table which appears on the back of the packaging and composition data (fiber, fruits and vegetables, dried vegetables). It is determined by the amount of healthy and unhealthy nutrients:</p>
+        <p><b>Negative points:</b> energy, saturated fat, sugars, sodium (high levels are considered unhealthy)</p>
+        <p><b>Positive points: </b>the proportion of fruits, vegetables and nuts, of olive, colza and nut oils, of fibers and proteins.</p>
+
+        <h1>What is the Eco-Score?</h1>
+                 <img src="{{ url_for('static', filename='eco_score.png') }}" id="eco-score" alt="eco score">
+        <p>The Eco-Score is designed on a model similar to the Nutri-Score: it is a grade from A to E which summarizes 15 environmental impacts. The Eco-Score score is materialized by a colored leaf-shaped logo with a letter from A (very low impact) to E (very high impact).</p>
+
+        <h2>How is the Eco-Score calculated?</h2>
+        <p>For each product category, a benchmark score is established using data from the Agribalyse environmental database designed by ADEME and INRAE. These data correspond to the life cycle analysis (LCA) of the products.</p>
+
+        <h3>Life cycle assessment (LCA)</h3>
+        <p>Life cycle analysis is a standardized assessment method for carrying out a multi-stage environmental assessment and multi-criteria:</p>
+        <ul>
+            <li>6 production steps: agriculture, processing, packaging, transportation, distribution, and consumption</li>
+            <li>14 environmental impact indicators: climate change/carbon footprint, ozone layer depletion, ionizing radiation, land, water, and energy use; pollution of air and marine and fresh water (particles, acidification, eutrophication); and depletion of resources</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block user %}
+<a class="user-icon" href="{{url_for('account')}}"><img src="{{ pfp }}" /></a>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        This is bad: {{ url_for('static', filename='user_dark.png') }}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Terreform!</h1>
+        <p class="lead">Explore a greener tomorrow with us.</p>
+        <hr class="my-4">
+
+    </div>
+
+        <!-- Add space between the button and the cards -->
+    <div class="mb-4"></div>
+
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">Carbon Footprint</h5>
+                    <p class="card-text">Check out the status of your carbon footprint here!</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="footprint.html">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">See Status</button>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">Food Nutrition Search</h5>
+                    <p class="card-text">Find out the nutrition value, eco-score and carbon footprint of your favorite foods!</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{{url_for('food_find')}}">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Search Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+                <div class="card-body">
+                    <h5 class="card-title">TEST</h5>
+                    <p class="card-text">blah blah blah blah</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

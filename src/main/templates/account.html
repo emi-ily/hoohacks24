@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Account {% endblock %}
+
+{% block user %}
+<a class="account-display"> {{ user }} </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="link-column">
+    <div class="not-logged-in" style="visibility:{{ no_user }};">
+        <a class="user-link" href="https://59223397842.propelauthtest.com/account">SIGN UP</a>
+        <br>
+        <a class="user-link" href="{{url_for('login')}}">LOG IN</a>
+    </div>
+
+    <div class="logged-in" style="visibility:{{ yes_user }};">
+        <a class="user-name">Welcome, {{ name }}!</a>
+        <br>
+        <a class="user-link" href="https://59223397842.propelauthtest.com/signup">MANAGE ACCOUNT</a>
+        <br>
+        <a class="user-link" href="{{url_for('home')}}">LOG IN</a>
+    </div>
+
+</div>
+
+{% endblock %}
