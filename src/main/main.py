@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
+from src.main.ecoScore import get_product_info
+
 app = Flask(__name__)
 
 
@@ -91,6 +93,12 @@ def account():
         yes_user_vis = "visible"
     return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name,
                            error="hidden")
+
+@app.route('/search', methods=['POST'])
+def search():
+    product_name = request.form['product_name']
+    product_info = get_product_info(product_name)
+    return render_template('result.html', product_info=product_info)
 
 
 if __name__ == "__main__":

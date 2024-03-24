@@ -3,7 +3,6 @@ import openfoodfacts
 import json
 import re
 
-app = Flask(__name__)
 
 def get_product_info(product_name):
     api = openfoodfacts.API(user_agent="OPenFoodInfo/1.0")
