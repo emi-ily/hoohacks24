@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 from propelauth_flask import TokenVerificationMetadata, init_auth, current_user
 
-from src.main.ecoScore import get_product_info
+from src.main.ecoScore import get_product_info, search_product
 
 app = Flask(__name__)
 
@@ -98,13 +98,18 @@ def account():
 @app.route('/search', methods=['POST'])
 def search():
     product_name = request.form['product_name']
+    product_count = search_product(product_name)
+
+    if product_name == "" or product_count == 0:
+        return render_template("foodsearch.html", error="visible", item=product_name)
     product_info = get_product_info(product_name)
+
     return render_template('result.html', product_info=product_info, product_name=product_name)
 
 
 @app.route('/foodsearch')
 def food_find():
-    return render_template('foodsearch.html')
+    return render_template('foodsearch.html', error="hidden", item="")
 
 
 if __name__ == "__main__":
