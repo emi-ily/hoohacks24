@@ -10,8 +10,9 @@
         <div class="text-center"> <!-- Center the button -->
         <div id="display-when-logged-out">
                 <p>You are not logged in</p>
-            <button id="signup" class="btn btn-lg custom-btn">Sign Up</button>
-            <button id="login" class="btn btn-lg custom-btn">Login</button>
+            <a href=""><button id="signup" class="btn btn-lg custom-btn">Sign Up</button></a>
+            <a href="https://59223397842.propelauthtest.com/en/login"><button id="login" class="btn btn-lg custom-btn">Login</button></a>
+
             </div>
             <div id="display-when-logged-in" style="display: none;">
                 <p>You are logged in <span id="email"></span></p>
@@ -71,6 +72,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Hook up buttons to redirect to signup, login, etc
+document.getElementById("signup").onclick = authClient.redirectToSignupPage;
+document.getElementById("login").onclick = authClient.redirectToLoginPage;
+document.getElementById("account").onclick = authClient.redirectToAccountPage;
+document.getElementById("logout").onclick = authClient.logout;
+
+// When the logged in status changes, display one of the divs
+authClient.addLoggedInChangeObserver((isLoggedIn) => {
+    if (isLoggedIn) {
+        document.getElementById("display-when-logged-in").style.display = "revert";
+        document.getElementById("display-when-logged-out").style.display = "none";
+
+        // Get authentication info and set email to it
+        authClient.getAuthenticationInfoOrNull()
+            .then(authInfo => {
+                document.getElementById("email").innerText = authInfo?.user?.email;
+            });
+    } else {
+        document.getElementById("display-when-logged-in").style.display = "none";
+        document.getElementById("display-when-logged-out").style.display = "revert";
+    }
+});
+</script>
 
 <script type="module" src="{{ url_for('static', filename='index.js') }}"></script>
 <script type="module" src="{{ url_for('static', filename='createClient.js') }}"></script>
