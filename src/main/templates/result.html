@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+
+{% block title %} {{ product_name }} score {% endblock %}
+
 {% block content %}
-<head>
-    <title>Product Info</title>
-</head>
-<h1>Product Info</h1>
+
+<h1>Product Info: {{ product_name }}</h1>
     <p>Eco-score: {{ product_info.ecoscore }}</p>
     <p>Nutri-score: {{ product_info.nutriscore }}</p>
     <p>Proteins: {{ product_info.proteins }} g</p>
