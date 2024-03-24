@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
+
+{% block title %} Food Search {% endblock %}
+
 {% block content %}
-<head>
-    <title>Product Info</title>
-</head>
-<h1>Search for a Product</h1>
+
+<h1>Search for a Product or Food</h1>
+    <div class="error-msg" style="visibility:{{ error }};">
+        Oh no! We couldn't find a food item called "{{ item }}"
+    </div>
     <form action="/search" method="post">
         <label>
             <input type="text" name="product_name" placeholder="Enter product name">
         </label>
         <button type="submit">Search</button>
     </form>
+
 {% endblock %}
