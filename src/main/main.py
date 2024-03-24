@@ -78,12 +78,14 @@ def account():
     if data.user is None:
         no_user_vis = "visible"
         yes_user_vis = "hidden"
-        username = None
+        username = " "
+        my_name = None
     else:
         username = data.user.get("username")
+        my_name = data.user.get("first_name")
         no_user_vis = "hidden"
         yes_user_vis = "visible"
-    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username)
+    return render_template("account.html", no_user=no_user_vis, yes_user=yes_user_vis, user=username, name=my_name)
 
 
 if __name__ == "__main__":

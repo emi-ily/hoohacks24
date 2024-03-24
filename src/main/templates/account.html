@@ -2,6 +2,10 @@
 
 {% block title %} Account {% endblock %}
 
+{% block user %}
+<a class="user-name sm-text"> {{ user }} </a>
+{% endblock %}
+
 {% block content %}
 
 <div class="link-column">
@@ -12,7 +16,9 @@
     </div>
 
     <div class="logged-in" style="visibility:{{ yes_user }};">
-        <a class="user-link" href="https://59223397842.propelauthtest.com/signup">SIGN UP</a>
+        <a class="account-display">Welcome, {{ name }}!</a>
+        <br>
+        <a class="user-link" href="https://59223397842.propelauthtest.com/signup">MANAGE ACCOUNT</a>
         <br>
         <a class="user-link" href="{{url_for('home')}}">LOG IN</a>
     </div>

@@ -107,6 +107,29 @@ h3, h4, h5, h6, p {
     color: #7D8D73;
     font-size: 48px;
     line-height: 2;
+    text-decoration: none;
+}
+
+.account-display {
+    font-family: "Urbanist",sans-serif;
+    font-weight: bolder;
+    color: #7D8D73;
+    font-size: 48px;
+    line-height: 2;
+    text-decoration: none;
+}
+
+.sm-text {
+    font-size: 32px;
+}
+
+.user-name {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    text-decoration: none;
+    font-face: bold;
+    color: #7D8D73;
 }
 
 .user-link:link {
